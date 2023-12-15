@@ -1,0 +1,106 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Permanent+Marker&family=Poppins:wght@300;400;500;600&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Handjet&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.shopping-cart-list {
+    position: absolute;
+    width: 25rem;
+    right: -0.75rem;
+    top: 2.9rem;
+    margin-left: 5px;
+    padding: 1rem;
+    z-index: 2;
+}
+
+.footer {
+    bottom: 0;
+}
+
+.shopping-cart-list .list-item {
+    margin-top: 1rem;
+}
+
+.page-content {
+    align-items: center;
+    font-family: 'Permanent Marker', cursive;
+    font-family: 'PT Serif', serif;
+    font-size: 20px;
+    padding: 10%;
+}
+
+p {
+    font-family: 'Cabin', sans-serif;
+}
+
+.head-style {
+    font-family: 'Russo One', sans-serif;
+    letter-spacing: 5px;
+}
+
+.button {
+    width: 140px;
+    height: 45px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+
+.button:hover {
+    background-color: #6a6a6a;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+#carouselExampleAutoplaying {
+    z-index: 1;
+}
+
+.card {
+    display: block;
+    margin-top: 45px;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    box-shadow: 5px 5px 30px grey;
+}
+
+.card-img-top {
+    position: relative;
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.card-body a {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+
+
+.foto {
+    height: 500px;
+    width: 400px;
+}
