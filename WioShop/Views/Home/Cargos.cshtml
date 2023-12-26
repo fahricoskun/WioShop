@@ -1,0 +1,15 @@
+﻿@using WioShop.Models.Classes
+@model IEnumerable<CargoModel>
+@{
+    ViewBag.Title = "Cargos";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+
+<div class="container pb-5">
+    <div class="row">
+        <!-- Kargo Şirketleri Başlangıç -->
+        <div>
+            @Html.Partial("_CargoList", Model)
+        </div>
+    </div>
+</div>

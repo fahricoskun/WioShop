@@ -4,28 +4,14 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Handjet&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-.shopping-cart-list {
-    position: absolute;
-    width: 25rem;
-    right: -0.75rem;
-    top: 2.9rem;
-    margin-left: 5px;
-    padding: 1rem;
-    z-index: 2;
-}
 
-.footer {
-    bottom: 0;
-}
-
-.shopping-cart-list .list-item {
-    margin-top: 1rem;
+.card-title {
+    font-size: 16px;
+    font-weight: 400;
+    color: #484848;
+    line-height: 1.35em;
+    height: 34px;
 }
 
 .page-content {
@@ -34,6 +20,11 @@
     font-family: 'PT Serif', serif;
     font-size: 20px;
     padding: 10%;
+}
+
+.signin-text {
+    font-style: normal;
+    font-weight: 600 !important;
 }
 
 p {
@@ -70,10 +61,6 @@ p {
     transform: translateY(-7px);
 }
 
-#carouselExampleAutoplaying {
-    z-index: 1;
-}
-
 .card {
     display: block;
     margin-top: 45px;
@@ -99,8 +86,16 @@ p {
     text-decoration: none;
 }
 
-
 .foto {
     height: 500px;
     width: 400px;
+}
+    
+bi-puzzle-fill {
+    color: black;
+}
+
+#description {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
 }

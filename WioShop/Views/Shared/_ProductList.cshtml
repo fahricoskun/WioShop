@@ -1,0 +1,34 @@
+﻿@using WioShop.Models.Classes
+@model IEnumerable<ProductModel>
+
+<div class="container-fluid" style="background-color: burlywood;">
+    <div class="container"style="background-color: burlywood;">
+        <div class="row">
+            @foreach (var urun in Model)
+            {
+                <div class="col-md-4 mb-5">
+                    <div class="card">
+                        <img src="~/img/@urun.ProductImg"
+                             alt="@urun.ProductName"
+                             class="card-img-top img-fluid img-edit"
+                             style="width: 420px; height: 350px;">
+                        <div class="card-body">
+                            <h1 class="card-title fs-5">
+                                <a href="~/Home/ProductDetails/@urun.Id">@urun.ProductName</a>
+                            </h1>
+                            <p class="cart-text">
+                                @urun.ProductDescription
+                            </p>
+                            <div class="d-flex justify-content-between">
+                                <a href="/Home/ProductDetails/@urun.Id" class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold">
+                                    Ürüne Git
+                                </a>
+                                <span class="price badge rounded-pill bg-warning text-dark d-flex align-items-center">@urun.ProductPrice ₺</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

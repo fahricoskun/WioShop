@@ -1,0 +1,68 @@
+﻿@model IEnumerable<WioShop.Models.Classes.Cargo>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="container pb-5 mt-5">
+
+    <h2 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Yeni Kargo Şirketi Ekle</h2>
+    <hr />
+
+    <p>
+        @Html.ActionLink("Kargo Ekle", "Create", null, new { @class = "btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold" })
+    </p>
+    <table class="table table-bordered table-striped table-hover table-light mt-4">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CargoImg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CargoName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WorkingHours)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CargoPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RegionName)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <img src="~/img/@item.CargoImg" width="70" />
+                </td>
+                <td>
+                    <p class="fw-bold mb-1">@Html.DisplayFor(modelItem => item.CargoName)</p>
+                </td>
+                <td>
+                    <span class="badge bg-primary rounded-pill d-inline">
+                        @Html.DisplayFor(modelItem => item.WorkingHours)
+                    </span>
+                </td>
+                <td>
+                    <span class="badge bg-warning rounded-pill d-inline">
+                        @Html.DisplayFor(modelItem => item.CargoPrice) ₺
+                    </span>
+                </td>
+                <td>
+                    <span class="badge bg-success rounded-pill d-inline">
+                        @Html.DisplayFor(modelItem => item.RegionId)
+                    </span>
+                </td>
+                <td>
+                    @Html.ActionLink("Güncelle", "Edit", new { id = item.Id }, new { @class = "btn btn-outline-info btn-sm px-4 me-sm-3 fw-bold" })
+                    @Html.ActionLink("Sil", "Delete", new { id = item.Id }, new { @class = "btn btn-outline-danger btn-sm px-4  fw-bold" })
+                </td>
+            </tr>
+        }
+
+    </table>
+    </div>

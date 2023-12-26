@@ -1,0 +1,83 @@
+﻿@model IEnumerable<WioShop.Models.Classes.Product>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="container pb-5 mt-4">
+
+    <h2 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Yeni Ürün</h2>
+    <hr />
+    <p>
+        @Html.ActionLink("Yeni Ürün", "Create", null, new { @class = "btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold" })
+    </p>
+    <table class="table table-bordered table-striped table-hover table-light mt-4">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductImg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsHome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsApproved)
+            </th>
+            <th style="width: 140px;"></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <img src="~/img/@item.ProductImg" width="70"/>
+                </td>
+                <td>
+                    <p class="fw-bold mb-1">@Html.DisplayFor(modelItem => item.ProductName)</p>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductDescription)
+                </td>
+                <td>
+                    @if (item.IsHome)
+                     {
+                        <label class="badge bg-success rounded-pill d-inline">
+                            Evet
+                        </label> 
+                    }
+                    else
+                    {
+                        <label class="badge bg-danger rounded-pill d-inline">
+                            Hayır
+                        </label>
+                    }
+                </td>
+                <td>
+                    @if (item.IsApproved)
+                    {
+                        <label class="badge bg-success rounded-pill d-inline">
+                            Evet
+                        </label>
+                    }
+                    else
+                    {
+                        <label class="badge bg-danger rounded-pill d-inline">
+                            Hayır
+                        </label>
+                    }
+                </td>
+                <td>
+                    @Html.ActionLink("Güncelle", "Edit", new { id = item.Id }, new {@class= "btn btn-outline-info btn-sm me-sm-3 fw-bold" })
+                    @Html.ActionLink("Sil", "Delete", new { id = item.Id }, new {@class= "btn btn-outline-danger btn-sm me-sm-3 fw-bold mt-1" })
+                </td>
+            </tr>
+        }
+
+    </table>
+    </div>

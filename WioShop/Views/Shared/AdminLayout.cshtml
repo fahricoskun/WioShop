@@ -1,0 +1,109 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WioShop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
+    <!-- CSS -->
+    @Styles.Render("~/Content/style.css")
+    @Styles.Render("~/Content/css")
+
+    <!-- Javascript -->
+    @Scripts.Render("~/Scripts/script")
+    @Scripts.Render("~/Scripts/js")
+</head>
+<body>
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Admin Paneli</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link text-bg-light" aria-current="page" href="~/Home/Index">Ana Sayfa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-bg-light" aria-current="page" href="~/Cargos/Index">Kargo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-bg-light" aria-current="page" href="/Categories/Index">Kategori</a>
+                    </li>
+                    <li class="nav-item"> 
+                        <a class="nav-link text-bg-light" aria-current="page" href="/Order">Siparişler</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-bg-light" aria-current="page" href="/Product/Index">Ürünler</a>
+                    </li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+    <div>
+        @RenderBody()
+    </div>
+
+    <!-- Footer Start -->
+    <footer class="bg-dark text-center text-white mb-0" id="info">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+            <!-- Section: Social media -->
+            <section class="mb-4">
+                <!-- Gmail -->
+                <a class="btn btn-outline-light btn-floating m-1"
+                   href="#"
+                   title="Gmail"
+                   role="button">
+                    <i class="fa-solid fa-at"></i>
+                </a>
+
+                <!-- Twitter -->
+                <a class="btn btn-outline-light btn-floating m-1"
+                   href="#"
+                   title="Twitter"
+                   role="button">
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+
+                <!-- Instagram -->
+                <a class="btn btn-outline-light btn-floating m-1"
+                   href="#"
+                   title="Instagram"
+                   role="button">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </section>
+            <!-- Section: Social media -->
+        </div>
+        <p>WioShop Sosyal Medya Hesapları.</p>
+        <!-- Grid container -->
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2023 Copyright: WioShop
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer End -->
+    <script src="js/script.js"></script>
+    <script src="~/Scripts/script.js"></script>
+    <script src="https://kit.fontawesome.com/af308b8bf8.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+</body>
+</html>
+

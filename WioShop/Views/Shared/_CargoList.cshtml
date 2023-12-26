@@ -1,0 +1,48 @@
+﻿@using WioShop.Models.Classes
+@model IEnumerable<CargoModel>
+
+<div class="container mt-4">
+    <table class="table align-middle table-hover mb-0 bg-white">
+        <thead class="bg-light">
+            <tr>
+                <th>Kargo Ad</th>
+                <th>Bölge</th>
+                <th>Çalışma Saatleri</th>
+                <th>Ücret (Kargo Başı)</th>
+            </tr>
+        </thead>
+        @foreach (var kargo in Model)
+        {
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <img src="~/img/@kargo.CargoImg"
+                                 alt=""
+                                 style="width: 55px; height: 55px"
+                                 class="rounded-circle" />
+                            <div class="ms-3">
+                                <p class="fw-bold mb-1">@kargo.CargoName</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <span class="badge bg-success rounded-pill d-inline">
+                            @kargo.RegionId
+                        </span>
+                    </td>
+                    <td>
+                        <span class="badge bg-primary rounded-pill d-inline">
+                            @kargo.WorkingHours
+                        </span>
+                    </td>
+                    <td>
+                        <span class="badge bg-warning rounded-pill d-inline">
+                            @kargo.CargoPrice ₺
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+    }
+        </table>
+</div>

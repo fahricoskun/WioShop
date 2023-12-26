@@ -1,0 +1,33 @@
+﻿@model WioShop.Models.Classes.Cargo
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="container pb-5 mt-4">
+
+    <h2>Kargo Sil</h2>
+
+    <div>
+        <hr />
+        <dl class="dl-horizontal mt-4">
+            <dt>
+                @Html.DisplayNameFor(model => model.CargoName)
+            </dt>
+            <dd class="mt-4">
+                @Html.DisplayFor(model => model.CargoName)
+            </dd>
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color mt-4">
+                <input type="submit" value="Sil" class="btn btn-primary" />
+                @Html.ActionLink("Kargo Listesi", "Index", null, new { @class = "btn btn-warning" })
+            </div>
+        }
+    </div>
+    </div>

@@ -1,0 +1,58 @@
+﻿@using WioShop.Models.Classes;
+@model Product
+@{
+    ViewBag.Title = "ProductDetails";
+    Layout = "~/Views/Shared/_FooterLayout.cshtml";
+}
+
+
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-6">
+            <img src="~/img/@Model.ProductImg" class="img-fluid rounded" style="width: 420px; height: 350px;">
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>@Model.ProductName</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-md-12">
+                    <div id="description">
+                        @Model.ProductDescription
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <i class="fa-solid fa-puzzle-piece">
+                        <span>@Model.Piece</span>
+                    </i>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <h4><span>@Model.ProductPrice TL</span></h4>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-md-12">
+
+                    @using (Html.BeginForm("SepeteEkle", "Cart"))
+                    {
+                        @Html.HiddenFor(i => i.Id)
+                        <button type="submit" class="btn btn-success">
+                            Sepete Ekle
+                        </button>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
